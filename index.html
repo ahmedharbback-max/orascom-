@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orascom Makadi Heights — Your Red Sea Vacation Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-logo">
+    <img src="https://static.wixstatic.com/media/5c5ad4_b682041040f140fea5e3f07ce3934c0c~mv2.png/v1/fill/w_152,h_34,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c5ad4_b682041040f140fea5e3f07ce3934c0c~mv2.png"
+         alt="Orascom Makadi Heights" class="nav-logo-img"
+         onerror="this.style.display='none';document.querySelector('.nav-logo-text').style.display='flex'">
+    <div class="nav-logo-text" style="display:none">
+      <span class="logo-orascom">ORASCOM</span>
+      <span class="logo-sep">|</span>
+      <span class="logo-sub">Makadi Heights</span>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#home" class="nav-link active">Home</a></li>
+    <li><a href="#about" class="nav-link">About</a></li>
+    <li><a href="#units" class="nav-link">Units</a></li>
+    <li><a href="#gallery" class="nav-link">Gallery</a></li>
+    <li><a href="#amenities" class="nav-link">Amenities</a></li>
+    <li><a href="#location" class="nav-link">Location</a></li>
+    <li><a href="#contact" class="nav-link nav-cta">Contact Us</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMobile()">✕</button>
+  <ul>
+    <li><a href="#home" onclick="closeMobile()">Home</a></li>
+    <li><a href="#about" onclick="closeMobile()">About</a></li>
+    <li><a href="#units" onclick="closeMobile()">Units</a></li>
+    <li><a href="#gallery" onclick="closeMobile()">Gallery</a></li>
+    <li><a href="#amenities" onclick="closeMobile()">Amenities</a></li>
+    <li><a href="#location" onclick="closeMobile()">Location</a></li>
+    <li><a href="#contact" onclick="closeMobile()">Contact Us</a></li>
+  </ul>
+  <a href="tel:01095453622" class="mobile-tel">📞 010 9545 3622</a>
+</div>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-img-wrap">
+    <img src="https://static.wixstatic.com/media/5c5ad4_ef087661a6164314b27df0735c540038~mv2.png/v1/fill/w_980,h_508,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c5ad4_ef087661a6164314b27df0735c540038~mv2.png"
+         alt="Makadi Heights Aerial View" class="hero-bg-img"
+         onerror="this.parentElement.style.background='linear-gradient(160deg,#041e35,#0a5c8f,#1a8fa0)'">
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Orascom Development · Makadi Bay, Red Sea</p>
+    <h1 class="hero-title">
+      <span>Makadi</span>
+      <em>Heights</em>
+    </h1>
+    <p class="hero-sub">Your Red Sea vacation home for all seasons — 78 meters above sea level, 180° panoramic views, and an integrated world-class community.</p>
+    <div class="hero-actions">
+      <a href="#units" class="btn-primary">Explore Units</a>
+      <a href="tel:01095453622" class="btn-ghost">📞 Call Now</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="sn">3.4M m²</span>
+        <span class="sl">Total Area</span>
+      </div>
+      <div class="sdiv"></div>
+      <div class="stat">
+        <span class="sn">88%</span>
+        <span class="sl">Landscaping</span>
+      </div>
+      <div class="sdiv"></div>
+      <div class="stat">
+        <span class="sn">78m</span>
+        <span class="sl">Above Sea Level</span>
+      </div>
+      <div class="sdiv"></div>
+      <div class="stat">
+        <span class="sn">10 Min</span>
+        <span class="sl">From Airport</span>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue">
+    <span>Scroll</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <div class="container">
+    <div class="about-wrap">
+      <div class="about-imgs">
+        <div class="ai-main">
+          <img src="https://prod-images.nawy.com/processed/compound_image/image/6958/default.webp"
+               alt="Makadi Heights Overview"
+               onerror="this.parentElement.style.background='linear-gradient(135deg,#0a4d7c,#1a8fa0)'">
+        </div>
+        <div class="ai-secondary">
+          <img src="https://prod-images.nawy.com/processed/compound_image/image/6959/default.webp"
+               alt="Makadi Heights Community"
+               onerror="this.parentElement.style.background='linear-gradient(135deg,#063257,#2ed8c3)'">
+        </div>
+        <div class="about-badge">
+          <strong>Est.</strong>
+          <span>1989</span>
+          <strong>Orascom</strong>
+        </div>
+      </div>
+      <div class="about-text">
+        <span class="eyebrow">About The Project</span>
+        <h2>A Masterpiece<br>on the Red Sea</h2>
+        <p>Makadi Heights is a one-of-a-kind integrated resort in Makadi Bay, Hurghada. Built by real estate giant Orascom Development, this mega-project is an ultimate multicultural, lavish, and perfectly equipped destination — elevated 78 meters above sea level for breathtaking 180° panoramic sea views.</p>
+        <p class="about-p2">Designed in partnership with world-renowned EDSA, with only 12% of the land built up and 88% dedicated to lush landscaping, pools, and water features, Makadi Heights redefines coastal living.</p>
+        <div class="about-feats">
+          <div class="af"><span>🏗️</span><div><b>EDSA Master Plan</b><p>Designed by world-renowned EDSA</p></div></div>
+          <div class="af"><span>💧</span><div><b>88% Green & Water</b><p>Lagoons, lakes, streams & infinity pools</p></div></div>
+          <div class="af"><span>🏖️</span><div><b>Red Sea Beachfront</b><p>Private beach & water sports</p></div></div>
+          <div class="af"><span>🏙️</span><div><b>Fully Integrated</b><p>Hotels, retail, clinics & schools</p></div></div>
+        </div>
+        <div class="about-offer">
+          <div class="offer-badge">🔥 Limited Offer</div>
+          <p><strong>Starting from 10M EGP</strong> with <strong>0% Down Payment</strong> available</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHASES -->
+<section class="phases">
+  <div class="container">
+    <span class="eyebrow center">Project Phases</span>
+    <h2 class="center">Choose Your Neighborhood</h2>
+    <div class="phases-grid">
+      <div class="phase-card">
+        <img src="https://prod-images.nawy.com/processed/compound/cover_image/1202/medium.webp" alt="Aden Phase" onerror="this.parentElement.style.background='linear-gradient(135deg,#0a4d7c,#1a8fa0)'">
+        <div class="phase-info"><h3>Aden</h3><p>8 Properties Available</p></div>
+      </div>
+      <div class="phase-card">
+        <img src="https://prod-images.nawy.com/processed/inventory/compounds/1965/gallery/Screenshot%202026-02-15%20153219/medium.webp" alt="Siyal Phase" onerror="this.parentElement.style.background='linear-gradient(135deg,#063257,#0a9bb5)'">
+        <div class="phase-info"><h3>Siyal Villas</h3><p>15 Properties Available</p></div>
+      </div>
+      <div class="phase-card">
+        <img src="https://prod-images.nawy.com/processed/compound/cover_image/1145/medium.webp" alt="Town Walk Phase" onerror="this.parentElement.style.background='linear-gradient(135deg,#0d5e8a,#2ed8c3)'">
+        <div class="phase-info"><h3>Town Walk</h3><p>Fitness & Activity Hub</p></div>
+      </div>
+      <div class="phase-card">
+        <img src="https://prod-images.nawy.com/processed/ledgemakadiheights/files/cover-images/medium.webp" alt="Ledge Phase" onerror="this.parentElement.style.background='linear-gradient(135deg,#041e35,#1a6fa0)'">
+        <div class="phase-info"><h3>Ledge</h3><p>Coming Soon</p></div>
+      </div>
+      <div class="phase-card">
+        <img src="https://static.wixstatic.com/media/5c5ad4_e304bb40857f40ec8bbda0a271f6eb5e~mv2.png/v1/fill/w_439,h_548,q_90,enc_avif,quality_auto/5c5ad4_e304bb40857f40ec8bbda0a271f6eb5e~mv2.png" alt="New Phase" onerror="this.parentElement.style.background='linear-gradient(135deg,#063257,#1a8fa0)'">
+        <div class="phase-info"><h3>DUA</h3><p>New Phase Launching</p></div>
+      </div>
+      <div class="phase-card">
+        <img src="https://static.wixstatic.com/media/5c5ad4_0fe828dd36af48a5bcac8088af5eb456~mv2.jpg/v1/fill/w_439,h_585,q_90,enc_avif,quality_auto/5c5ad4_0fe828dd36af48a5bcac8088af5eb456~mv2.jpg" alt="Siyal Villas New" onerror="this.parentElement.style.background='linear-gradient(135deg,#0a3d6b,#2da8c3)'">
+        <div class="phase-info"><h3>Siyal Villas</h3><p>Launching Now</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UNITS -->
+<section id="units" class="units">
+  <div class="container">
+    <span class="eyebrow center">Our Properties</span>
+    <h2 class="center">Find Your Perfect Unit</h2>
+    <p class="units-sub">A wide range of luxury units with breathtaking sea views — from cozy chalets to grand standalone villas</p>
+    <div class="tabs">
+      <button class="tab active" data-tab="chalet">Chalet</button>
+      <button class="tab" data-tab="apartment">Apartment</button>
+      <button class="tab" data-tab="villa">Villa</button>
+      <button class="tab" data-tab="townhouse">Townhouse</button>
+      <button class="tab" data-tab="penthouse">Penthouse</button>
+    </div>
+    <div class="units-grid" id="unitsGrid">
+
+      <!-- CHALETS -->
+      <div class="unit-card" data-type="chalet">
+        <div class="unit-img">
+          <img src="https://static.wixstatic.com/media/5c5ad4_0cee512574cb4a338df5fba00c00f532~mv2.jpg/v1/fit/w_473,h_630,q_90,enc_avif,quality_auto/5c5ad4_0cee512574cb4a338df5fba00c00f532~mv2.jpg" alt="Chalet Standard" onerror="this.parentElement.style.background='linear-gradient(135deg,#e8f4f8,#b8dde8)'">
+          <div class="ubadge">Available</div>
+        </div>
+        <div class="unit-body">
+          <h3>Standard Chalet</h3>
+          <div class="uspecs"><span>🛏 2 Beds</span><span>🛁 2 Baths</span><span>📐 85 m²</span></div>
+          <p class="uview">Partial sea view + private garden</p>
+          <div class="uprice-row">
+            <div><span class="ulabel">Starting from</span><span class="uprice">2,800,000 EGP</span></div>
+            <a href="tel:01095453622" class="btn-sm">Inquire</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="unit-card" data-type="chalet">
+        <div class="unit-img">
+          <img src="https://static.wixstatic.com/media/5c5ad4_0593d0ca90cc4fe79f54879e1c7d73f6~mv2.jpg/v1/fit/w_947,h_630,q_90,enc_avif,quality_auto/5c5ad4_0593d0ca90cc4fe79f54879e1c7d73f6~mv2.jpg" alt="Chalet Deluxe" onerror="this.parentElement.style.background='linear-gradient(135deg,#d0eaf7,#82c4e0)'">
+          <div class="ubadge hot">Most Popular</div>
+        </div>
+        <div class="unit-body">
+          <h3>Deluxe Chalet</h3>
+          <div class="uspecs"><span>🛏 3 Beds</span><span>🛁 2 Baths</span><span>📐 110 m²</span></div>
+          <p class="uview">Direct sea view + wide terrace</p>
+          <div class="uprice-row">
+            <div><span class="ulabel">Starting from</span><span class="uprice">3,900,000 EGP</span></div>
+            <a href="tel:01095453622" class="btn-sm">Inquire</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- APARTMENTS -->
+      <div class="unit-card hidden" data-type="apartment">
+        <div class="unit-img">
+          <img src="https://static.wixstatic.com/media/5c5ad4_f474bb22fb5545a3a82c08af0c3dce70~mv2.jpg/v1/fit/w_644,h_429,q_90,enc_avif,quality_auto/5c5ad4_f474bb22fb5545a3a82c08af0c3dce70~mv2.jpg" alt="Apartment 1 Bed" onerror="this.parentElement.style.background='linear-gradient(135deg,#e0f2f1,#80cbc4)'">
+          <div class="ubadge">Available</div>
+        </div>
+        <div class="unit-body">
+          <h3>1-Bedroom Apartment</h3>
+          <div class="uspecs"><span>🛏 1 Bed</span><span>🛁 1 Bath</span><span>📐 60 m²</span></div>
+          <p class="uview">Garden & pool view</p>
+          <div class="uprice-row">
+            <div><span class="ulabel">Starting from</span><span class="uprice">1,900,000 EGP</span></div>
+            <a href="tel:01095453622" class="btn-sm">Inquire</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="unit-card hidden" data-type="apartment">
+        <div class="unit-img">
+          <img src="https://static.wixstatic.com/media/5c5ad4_c3deacc9ab72475fbaeae9ecc61c0379~mv2.jpg/v1/fit/w_776,h_429,q_90,enc_avif,quality_auto/5c5ad4_c3deacc9ab72475fbaeae9ecc61c0379~mv2.jpg" alt="Apartment 2 Bed" onerror="this.parentElement.style.background='linear-gradient(135deg,#b2ebf2,#4dd0e1)'">
+          <div class="ubadge hot">Limited</div>
+        </div>
+        <div class="unit-body">
+          <h3>2-Bedroom Apartment</h3>
+          <div class="uspecs"><span>🛏 2 Beds</span><span>🛁 2 Baths</span><span>📐 90 m²</span></div>
+          <p class="uview">Side sea view + balcony</p>
+          <div class="uprice-row">
+            <div><span class="ulabel">Starting from</span><span class="uprice">2,500,000 EGP</span></div>
+            <a href="tel:01095453622" class="btn-sm">Inquire</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- VILLAS -->
+      <div class="unit-card hidden" data-type="villa">
+        <div class="unit-img">
+          <img src="https://static.wixstatic.com/media/5c5ad4_dc022e5114da40ce8e356c62c000225c~mv2.jpg/v1/fit/w_983,h_655,q_90,enc_avif,quality_auto/5c5ad4_dc022e5114da40ce8e356c62c000225c~mv2.jpg" alt="Twin Villa" onerror="this.parentElement.style.background='linear-gradient(135deg,#e3f2fd,#64b5f6)'">
+          <div class="ubadge">Available</div>
+        </div>
+        <div class="unit-body">
+          <h3>Twin Villa</h3>
+          <div class="uspecs"><span>🛏 3 Beds</span><span>🛁 3 Baths</span><span>📐 220 m²</span></div>
+          <p class="uview">Private garden + sea view</p>
+          <div class="uprice-row">
+            <div><span class="ulabel">Starting from</span><span class="uprice">7,500,000 EGP</span></div>
+            <a href="tel:01095453622" class="btn-sm">Inquire</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="unit-card hidden" data-type="villa">
+        <div class="unit-img">
+          <img src="https://static.wixstatic.com/media/5c5ad4_b40800a80f6f456cbffee0bda2bbc95b~mv2.jpg/v1/fit/w_437,h_655,q_90,enc_avif,quality_auto/5c5ad4_b40800a80f6f456cbffee0bda2bbc95b~mv2.jpg" alt="Standalone Villa" onerror="this.parentElement.style.background='linear-gradient(135deg,#bbdefb,#1976d2)'">
+          <div class="ubadge hot">VIP</div>
+        </div>
+        <div class="unit-body">
+          <h3>Standalone Villa</h3>
+          <div class="uspecs"><span>🛏 4 Beds</span><span>🛁 4 Baths</span><span>📐 350 m²</span></div>
+          <p class="uview">Private pool + direct sea frontage</p>
+          <div class="uprice-row">
+            <div><span class="ulabel">Starting from</span><span class="uprice">12,000,000 EGP</span></div>
+            <a href="tel:01095453622" class="btn-sm">Inquire</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOWNHOUSE -->
+      <div class="unit-card hidden" data-type="townhouse">
+        <div class="unit-img">
+          <img src="https://static.wixstatic.com/media/5c5ad4_829fb6ffbfb548f4bb1e15138bda790d~mv2.jpg/v1/fit/w_485,h_623,q_90,enc_avif,quality_auto/5c5ad4_829fb6ffbfb548f4bb1e15138bda790d~mv2.jpg" alt="Townhouse" onerror="this.parentElement.style.background='linear-gradient(135deg,#e8f5e9,#66bb6a)'">
+          <div class="ubadge">Available</div>
+        </div>
+        <div class="unit-body">
+          <h3>Townhouse</h3>
+          <div class="uspecs"><span>🛏 3 Beds</span><span>🛁 3 Baths</span><span>📐 200 m²</span></div>
+          <p class="uview">Sea & landscape panoramic view</p>
+          <div class="uprice-row">
+            <div><span class="ulabel">Starting from</span><span class="uprice">6,200,000 EGP</span></div>
+            <a href="tel:01095453622" class="btn-sm">Inquire</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="unit-card hidden" data-type="townhouse">
+        <div class="unit-img">
+          <img src="https://static.wixstatic.com/media/5c5ad4_f447b2ab35ee4566a68644e25e17dedf~mv2.jpg/v1/fit/w_935,h_623,q_90,enc_avif,quality_auto/5c5ad4_f447b2ab35ee4566a68644e25e17dedf~mv2.jpg" alt="Corner Townhouse" onerror="this.parentElement.style.background='linear-gradient(135deg,#f3e5f5,#ba68c8)'">
+          <div class="ubadge hot">Corner Unit</div>
+        </div>
+        <div class="unit-body">
+          <h3>Corner Townhouse</h3>
+          <div class="uspecs"><span>🛏 4 Beds</span><span>🛁 3 Baths</span><span>📐 240 m²</span></div>
+          <p class="uview">Extended garden + dual view</p>
+          <div class="uprice-row">
+            <div><span class="ulabel">Starting from</span><span class="uprice">8,000,000 EGP</span></div>
+            <a href="tel:01095453622" class="btn-sm">Inquire</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PENTHOUSE -->
+      <div class="unit-card hidden" data-type="penthouse">
+        <div class="unit-img">
+          <img src="https://static.wixstatic.com/media/5c5ad4_5390fa1987274477bd525c052732107a~mv2.jpg/v1/fit/w_493,h_617,q_90,enc_avif,quality_auto/5c5ad4_5390fa1987274477bd525c052732107a~mv2.jpg" alt="Penthouse" onerror="this.parentElement.style.background='linear-gradient(135deg,#0d47a1,#00bcd4)'">
+          <div class="ubadge hot">Exclusive</div>
+        </div>
+        <div class="unit-body">
+          <h3>Luxury Penthouse</h3>
+          <div class="uspecs"><span>🛏 4 Beds</span><span>🛁 4 Baths</span><span>📐 450 m²</span></div>
+          <p class="uview">Rooftop terrace · 180° sea view · Jacuzzi</p>
+          <div class="uprice-row">
+            <div><span class="ulabel">Starting from</span><span class="uprice">18,000,000 EGP</span></div>
+            <a href="tel:01095453622" class="btn-sm">Inquire</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="payment-banner">
+      <span>💳</span>
+      <p><strong>Flexible Payment Plans</strong> · Up to 10 years installments · Down payment starting from 0% · Zero interest</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="gallery">
+  <div class="container">
+    <span class="eyebrow center light">Gallery</span>
+    <h2 class="center light">Life at Makadi Heights</h2>
+  </div>
+  <div class="gallery-grid">
+    <div class="gi gi-tall">
+      <img src="https://static.wixstatic.com/media/5c5ad4_696b312e0c7e4881b66faf7e7aafaaa5~mv2.jpg/v1/fit/w_927,h_617,q_90,enc_avif,quality_auto/5c5ad4_696b312e0c7e4881b66faf7e7aafaaa5~mv2.jpg" alt="Makadi Heights View" onerror="this.parentElement.style.background='linear-gradient(135deg,#0a3d6b,#1a6fa0)'">
+      <div class="gi-label">The Panoramic View</div>
+    </div>
+    <div class="gi">
+      <img src="https://prod-images.nawy.com/processed/compound_image/image/6960/default.webp" alt="Makadi Heights Pool" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a6fa0,#0a9bb5)'">
+      <div class="gi-label">Infinity Pools</div>
+    </div>
+    <div class="gi">
+      <img src="https://prod-images.nawy.com/processed/compound_image/image/6961/default.webp" alt="Makadi Heights Beach" onerror="this.parentElement.style.background='linear-gradient(135deg,#0d5e8a,#1da8c0)'">
+      <div class="gi-label">Private Beach</div>
+    </div>
+    <div class="gi gi-wide">
+      <img src="https://prod-images.nawy.com/processed/compound_image/image/6962/default.webp" alt="Makadi Heights Community" onerror="this.parentElement.style.background='linear-gradient(135deg,#083f6e,#3dc5d9)'">
+      <div class="gi-label">The Community</div>
+    </div>
+    <div class="gi">
+      <img src="https://prod-images.nawy.com/processed/compound_image/image/6963/default.webp" alt="Makadi Heights Interior" onerror="this.parentElement.style.background='linear-gradient(135deg,#0a4d7c,#2980b9)'">
+      <div class="gi-label">Resort Lifestyle</div>
+    </div>
+    <div class="gi">
+      <img src="https://static.wixstatic.com/media/5c5ad4_85f567db29c147418ea2d7216ce47db9f002.jpg/v1/fill/w_1280,h_720,enc_auto/file.jpeg" alt="Construction Updates" onerror="this.parentElement.style.background='linear-gradient(135deg,#063257,#0a6fa0)'">
+      <div class="gi-label">Construction Updates</div>
+    </div>
+  </div>
+
+  <!-- VIDEO -->
+  <div class="video-row">
+    <div class="container">
+      <div class="video-box" id="videoBox">
+        <div class="play-wrap">
+          <div class="play-btn">▶</div>
+        </div>
+        <p>Watch the Makadi Heights Experience Film</p>
+        <span>Full video tour · 3:45 min</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AMENITIES -->
+<section id="amenities" class="amenities">
+  <div class="container">
+    <span class="eyebrow center">Facilities & Services</span>
+    <h2 class="center">Everything You Need,<br>All in One Place</h2>
+    <div class="am-grid">
+      <div class="am-card"><div class="am-ic">🏊‍♂️</div><h4>Infinity Pools</h4><p>Multiple lagoons, pools & water streams across the resort</p></div>
+      <div class="am-card"><div class="am-ic">⛵</div><h4>Water Sports</h4><p>Diving, surfing, sailing & more at the Red Sea</p></div>
+      <div class="am-card"><div class="am-ic">🏋️</div><h4>World-Class Gym</h4><p>33,000 m² clubhouse with full fitness facilities</p></div>
+      <div class="am-card"><div class="am-ic">🧖</div><h4>Luxury Spa</h4><p>Eastern & Western treatments and wellness center</p></div>
+      <div class="am-card"><div class="am-ic">🍽️</div><h4>Restaurants & Cafés</h4><p>Diverse international & Mediterranean dining options</p></div>
+      <div class="am-card"><div class="am-ic">🎠</div><h4>Kids Aqua Park</h4><p>Safe, monitored fun zone for children 24/7</p></div>
+      <div class="am-card"><div class="am-ic">🎾</div><h4>Sports Courts</h4><p>Football, tennis, padel & beach volleyball</p></div>
+      <div class="am-card"><div class="am-ic">🏪</div><h4>Commercial Strip</h4><p>Supermarket, pharmacy, bank & retail stores</p></div>
+      <div class="am-card"><div class="am-ic">🏥</div><h4>Medical Center</h4><p>Fully equipped clinics & pharmacy on-site</p></div>
+      <div class="am-card"><div class="am-ic">📚</div><h4>Educational Hub</h4><p>Making it a true all-year-round destination</p></div>
+      <div class="am-card"><div class="am-ic">🚌</div><h4>Shuttle Service</h4><p>Daily buses to Hurghada & Senzo Mall</p></div>
+      <div class="am-card"><div class="am-ic">🔒</div><h4>24/7 Security</h4><p>Armed guards + full CCTV surveillance system</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location" class="location">
+  <div class="container">
+    <span class="eyebrow center">Location</span>
+    <h2 class="center">Strategically Located<br>in Makadi Bay</h2>
+    <p class="loc-sub">Km 45 on the Red Sea Road, Makadi Bay, Hurghada — one of Egypt's most prestigious coastal destinations</p>
+    <div class="location-wrap">
+      <div class="map-box">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3474.2!2d33.97!3d27.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145aa4a5fc6e6f69%3A0x1!2sMakadi+Heights+Hurghada!5e0!3m2!1sen!2seg!4v1"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+      <div class="distances">
+        <h3>Nearby Distances</h3>
+        <div class="dist-list">
+          <div class="di"><span>✈️</span><div><b>Hurghada Int'l Airport</b><em>10 minutes</em></div></div>
+          <div class="di"><span>🏙️</span><div><b>Hurghada City Center</b><em>20 minutes</em></div></div>
+          <div class="di"><span>🛥️</span><div><b>El Gouna</b><em>40 minutes</em></div></div>
+          <div class="di"><span>🐠</span><div><b>Coral Reef (Snorkeling)</b><em>On your doorstep</em></div></div>
+          <div class="di"><span>🏥</span><div><b>Nearest Hospital</b><em>10 minutes</em></div></div>
+          <div class="di"><span>🛒</span><div><b>Senzo Mall</b><em>Shuttle service available</em></div></div>
+        </div>
+        <a href="https://maps.google.com/?q=Makadi+Heights+Hurghada" target="_blank" class="btn-primary mt">Open in Google Maps</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="contact-bg-overlay"></div>
+  <div class="container">
+    <div class="contact-wrap">
+      <div class="contact-left">
+        <span class="eyebrow light">Contact Us</span>
+        <h2 class="light">Start Your Journey<br>Today</h2>
+        <p class="contact-desc">Our dedicated sales team is ready to answer all your questions and arrange a private project visit.</p>
+        <div class="cdetails">
+          <a href="tel:01095453622" class="cd cd-phone">
+            <span>📞</span>
+            <div><b>Call Us Now</b><strong>010 9545 3622</strong></div>
+          </a>
+          <a href="https://wa.me/201095453622" target="_blank" class="cd cd-wa">
+            <span>💬</span>
+            <div><b>WhatsApp</b><strong>010 9545 3622</strong></div>
+          </a>
+          <div class="cd">
+            <span>📍</span>
+            <div><b>Sales Office</b><strong>Makadi Bay, Hurghada, Red Sea</strong></div>
+          </div>
+          <div class="cd">
+            <span>🕐</span>
+            <div><b>Working Hours</b><strong>Sat – Thu: 9AM – 9PM</strong></div>
+          </div>
+        </div>
+        <div class="socials">
+          <a href="#" class="soc">Facebook</a>
+          <a href="#" class="soc">Instagram</a>
+          <a href="#" class="soc">YouTube</a>
+        </div>
+      </div>
+      <div class="contact-form-box">
+        <form id="contactForm">
+          <h3>Register Your Interest</h3>
+          <div class="frow">
+            <div class="fg">
+              <label>Full Name *</label>
+              <input type="text" placeholder="Your full name" required>
+            </div>
+            <div class="fg">
+              <label>Phone Number *</label>
+              <input type="tel" placeholder="+20 1XX XXX XXXX" required>
+            </div>
+          </div>
+          <div class="fg">
+            <label>Email Address</label>
+            <input type="email" placeholder="example@email.com">
+          </div>
+          <div class="fg">
+            <label>Unit Type</label>
+            <select>
+              <option value="">Select unit type</option>
+              <option>Standard Chalet</option>
+              <option>Deluxe Chalet</option>
+              <option>1-Bedroom Apartment</option>
+              <option>2-Bedroom Apartment</option>
+              <option>Twin Villa</option>
+              <option>Standalone Villa</option>
+              <option>Townhouse</option>
+              <option>Penthouse</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label>Budget Range</label>
+            <select>
+              <option value="">Select budget range</option>
+              <option>Under 3M EGP</option>
+              <option>3M – 6M EGP</option>
+              <option>6M – 10M EGP</option>
+              <option>Above 10M EGP</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label>Message</label>
+            <textarea placeholder="Any questions or notes..." rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Send Request</button>
+          <p class="fnote">Our team will contact you within 24 hours</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="fb">
+        <img src="https://static.wixstatic.com/media/5c5ad4_b682041040f140fea5e3f07ce3934c0c~mv2.png/v1/fill/w_152,h_34,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c5ad4_b682041040f140fea5e3f07ce3934c0c~mv2.png"
+             alt="Orascom Makadi Heights" style="margin-bottom:1rem;filter:brightness(0) invert(1);opacity:.7;"
+             onerror="this.style.display='none'">
+        <p>A luxury Red Sea resort community by Orascom Development — over 35 years of excellence in integrated destination development.</p>
+      </div>
+      <div class="fl">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About the Project</a></li>
+          <li><a href="#units">Units & Prices</a></li>
+          <li><a href="#gallery">Photo Gallery</a></li>
+          <li><a href="#location">Location</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="fl">
+        <h4>Unit Types</h4>
+        <ul>
+          <li><a href="#units">Chalets</a></li>
+          <li><a href="#units">Apartments</a></li>
+          <li><a href="#units">Villas</a></li>
+          <li><a href="#units">Townhouses</a></li>
+          <li><a href="#units">Penthouses</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Contact</h4>
+        <a href="tel:01095453622" class="footer-phone">📞 010 9545 3622</a>
+        <p>📍 Makadi Bay, Hurghada<br>Red Sea, Egypt</p>
+        <p>🕐 Sat – Thu: 9AM – 9PM</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Orascom Makadi Heights. All Rights Reserved.</p>
+      <p>Prices and information are indicative and subject to change without prior notice.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating Call Button -->
+<a href="tel:01095453622" class="float-call">📞 Call Now</a>
+
+<!-- Scroll Top -->
+<button class="scroll-top" id="scrollTop">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>
