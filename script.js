@@ -82,7 +82,15 @@ document.addEventListener("DOMContentLoaded",()=>{
    window.clearTimeout(timeout);
    if(response.ok)country=(await response.text()).trim().toUpperCase();
   }catch(e){}
-  // Re-check in case the visitor chose a language while the lookup was in flight.\n  try{const latest=localStorage.getItem("makadi-language-manual")||"";if(paths[latest]){if(latest!==current)goToLanguage(latest);return}}catch(e){}\n  const suggested=countryLanguages[country]||localeLanguage();
+  // Re-check in case the visitor chose a language while the lookup was in flight.
+  try{
+   const latest=localStorage.getItem("makadi-language-manual")||"";
+   if(paths[latest]){
+    if(latest!==current)goToLanguage(latest);
+    return;
+   }
+  }catch(e){}
+  const suggested=countryLanguages[country]||localeLanguage();
   if(paths[suggested]&&suggested!==current){
    let alreadyRedirected=false;
    try{alreadyRedirected=sessionStorage.getItem("makadi-language-redirected")==="1"}catch(e){}
