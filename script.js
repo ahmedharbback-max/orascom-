@@ -105,4 +105,21 @@ document.addEventListener("DOMContentLoaded",()=>{
  const header=document.getElementById("navbar");
  const onScroll=()=>header?.classList.toggle("scrolled",window.scrollY>24);
  window.addEventListener("scroll",onScroll,{passive:true});onScroll();
+
+ // Gentle scroll reveals. All content stays visible when motion is reduced.
+ const revealTargets=document.querySelectorAll(
+  "#about .destination-visual,#about .split>div:last-child,.stats-grid article,.service-grid>div,.unit-card,.development-grid article,.amenity-grid>div,.gallery-grid img"
+ );
+ if(revealTargets.length){
+  revealTargets.forEach(el=>el.classList.add("reveal"));
+  document.body.classList.add("motion-ready");
+  if("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+   const revealObserver=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+     if(entry.isIntersecting){entry.target.classList.add("is-visible");revealObserver.unobserve(entry.target)}
+    });
+   },{threshold:.12,rootMargin:"0px 0px -35px 0px"});
+   revealTargets.forEach(el=>revealObserver.observe(el));
+  }else{revealTargets.forEach(el=>el.classList.add("is-visible"))}
+ }
 });
