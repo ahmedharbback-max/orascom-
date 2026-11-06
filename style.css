@@ -351,3 +351,18 @@ html[dir="rtl"] .hero-content{text-align:right}
 .inner-site-header+.site-header,.inner-site-header+header{margin-top:74px}
 @media(max-width:1000px){.header-flags{gap:4px}.header-flags img{width:20px;height:15px}}
 @media(max-width:760px){.header-flags{gap:3px}.header-flags a{padding:3px}.header-flags img{width:18px;height:13px}.inner-site-header{padding:8px 10px!important;gap:7px}.inner-site-header .original-logo{width:108px;height:25px}.inner-site-header .brand-independent{max-width:58px;font-size:6px;padding-inline-start:5px}.inner-site-header .nav-links{display:none}}
+
+/* Final visual refinements: baby-blue navigation, smaller upright header type */
+.site-header{background:#dceff8!important;color:#214f69!important;border-bottom:1px solid #c2e2f0!important;box-shadow:0 5px 22px rgba(39,105,139,.10)!important}
+.site-header,.site-header *{font-style:normal!important}
+.site-header .nav-links{gap:8px}
+.site-header .nav-links a{font-size:11.5px!important;line-height:1.2;font-weight:600;letter-spacing:.01em;padding:8px 9px!important;color:#315d76!important}
+.site-header .nav-links a:hover{color:#176f9c!important}
+.site-header .nav-links .nav-cta{background:#c4e6f4!important;border-color:#9ccfe4!important;color:#174f70!important}
+.site-header .brand-copy b{font-size:10px!important;letter-spacing:.08em}
+.site-header .brand-copy small{font-size:7px!important;letter-spacing:.12em}
+.hero h1,.hero h1 em{font-style:normal!important}
+.header-flags{gap:5px}
+.header-flags a{padding:3px}
+@media(max-width:1000px){.site-header .nav-links a{font-size:10.5px!important;padding:7px 6px!important}.header-flags img{width:20px;height:15px}}
+@media(max-width:760px){.site-header{background:#dceff8!important}.site-header .nav-links{display:none}.header-flags{gap:3px}.header-flags img{width:18px;height:13px}}
