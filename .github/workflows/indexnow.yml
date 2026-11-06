@@ -1,0 +1,59 @@
+name: Submit updated pages to IndexNow
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*.html'
+      - 'sitemap.xml'
+      - 'robots.txt'
+
+permissions:
+  contents: read
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out published source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Verify key file and build URL list
+        id: payload
+        shell: bash
+        run: |
+          set -euo pipefail
+          KEY="a0128a73814986a2a5c683e19759032ae03f1435f2248875eeaec662c1b12152"
+          test -f "${KEY}.txt"
+          test "$(tr -d '\r\n' < "${KEY}.txt")" = "$KEY"
+          python3 - <<'PY' > indexnow-payload.json
+          import json
+          import xml.etree.ElementTree as ET
+
+          key = "a0128a73814986a2a5c683e19759032ae03f1435f2248875eeaec662c1b12152"
+          root = ET.parse("sitemap.xml").getroot()
+          urls = [node.text.strip() for node in root.iter() if node.tag.endswith("loc") and node.text]
+          if not urls:
+              raise SystemExit("No sitemap URLs found")
+          print(json.dumps({
+              "host": "orascom-makadi-heights.com",
+              "key": key,
+              "urlList": urls
+          }))
+          PY
+          echo "url_count=$(python3 -c 'import json; print(len(json.load(open("indexnow-payload.json"))["urlList"]))')" >> "$GITHUB_OUTPUT"
+
+      - name: Submit sitemap URLs to IndexNow
+        shell: bash
+        run: |
+          set -euo pipefail
+          status="$(curl --silent --show-error --output indexnow-response.txt --write-out '%{http_code}' \
+            --request POST 'https://api.indexnow.org/indexnow' \
+            --header 'Content-Type: application/json; charset=utf-8' \
+            --data-binary @indexnow-payload.json)"
+          echo "IndexNow HTTP status: $status"
+          cat indexnow-response.txt
+          if [[ "$status" != "200" && "$status" != "202" ]]; then
+            exit 1
+          fi

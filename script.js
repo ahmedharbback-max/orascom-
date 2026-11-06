@@ -38,11 +38,21 @@ document.addEventListener("DOMContentLoaded",()=>{
  const year=document.getElementById("year");if(year)year.textContent=new Date().getFullYear();
 
  // Keep a visitor's deliberate language choice; otherwise suggest one from country.
- const paths={en:"/",ar:"/ar/",it:"/it/",de:"/de/",fr:"/fr/",ru:"/ru/"};
+ const supportedLanguages=["en","ar","it","de","fr","ru"];
  const select=document.getElementById("siteLanguage");
  const current=document.documentElement.lang||"en";
+ const basePath=()=>{
+  const path=window.location.pathname||"/";
+  return path.replace(/^\/(?:ar|it|de|fr|ru)(?=\/|$)/,"")||"/";
+ };
+ const localizedPath=target=>{
+  const base=basePath();
+  const guide=base.startsWith("/guides/");
+  if(guide&&!["en","ar"].includes(target))return base;
+  return target==="en"?base:`/${target}${base==="/" ? "/" : base}`;
+ };
  const countryLanguages={
-  EG:"ar",SA:"ar",AE:"ar",QA:"ar",KW:"ar",BH:"ar",OM:"ar",JO:"ar",LB:"ar",IQ:"ar",YE:"ar",PS:"ar",SD:"ar",MA:"ar",DZ:"ar",TN:"ar",LY:"ar",
+  EG:"en",SA:"ar",AE:"ar",QA:"ar",KW:"ar",BH:"ar",OM:"ar",JO:"ar",LB:"ar",IQ:"ar",YE:"ar",PS:"ar",SD:"ar",MA:"ar",DZ:"ar",TN:"ar",LY:"ar",
   FR:"fr",MC:"fr",SN:"fr",CI:"fr",CD:"fr",CM:"fr",
   DE:"de",AT:"de",CH:"de",LI:"de",
   IT:"it",SM:"it",VA:"it",
@@ -57,12 +67,32 @@ document.addEventListener("DOMContentLoaded",()=>{
   return "en";
  };
  const goToLanguage=target=>{
-  if(!paths[target])return;
+  if(!supportedLanguages.includes(target))return;
   if(select)select.value=target;
-  if(target!==current)window.location.replace(paths[target]);
+  const destination=localizedPath(target);
+  if(destination!==window.location.pathname)window.location.replace(destination);
  };
  if(select){
   select.value=current;
+  const picker=document.querySelector(".language-picker");
+  const trigger=picker?.querySelector(".language-current");
+  const menu=picker?.querySelector(".language-menu");
+  if(trigger&&menu){
+   trigger.addEventListener("click",()=>{
+    const open=picker.classList.toggle("is-open");
+    trigger.setAttribute("aria-expanded",String(open));
+   });
+   menu.querySelectorAll("[data-language]").forEach(item=>item.addEventListener("click",()=>{
+    select.value=item.dataset.language;
+    select.dispatchEvent(new Event("change",{bubbles:true}));
+   }));
+   document.addEventListener("click",event=>{
+    if(!picker.contains(event.target)){picker.classList.remove("is-open");trigger.setAttribute("aria-expanded","false")}
+   });
+   document.addEventListener("keydown",event=>{
+    if(event.key==="Escape"){picker.classList.remove("is-open");trigger.setAttribute("aria-expanded","false");trigger.focus()}
+   });
+  }
   select.addEventListener("change",()=>{
    const chosen=select.value;
    try{localStorage.setItem("makadi-language-manual",chosen)}catch(e){}
@@ -73,7 +103,8 @@ document.addEventListener("DOMContentLoaded",()=>{
  const suggestLanguage=async()=>{
   let manual="";
   try{manual=localStorage.getItem("makadi-language-manual")||""}catch(e){}
-  if(paths[manual]){if(manual!==current)goToLanguage(manual);return}
+  if(supportedLanguages.includes(manual)){if(manual!==current)goToLanguage(manual);return}
+  if(window.location.pathname!=="/")return;
   let country="";
   try{
    const controller=new AbortController();
@@ -85,13 +116,13 @@ document.addEventListener("DOMContentLoaded",()=>{
   // Re-check in case the visitor chose a language while the lookup was in flight.
   try{
    const latest=localStorage.getItem("makadi-language-manual")||"";
-   if(paths[latest]){
+   if(supportedLanguages.includes(latest)){
     if(latest!==current)goToLanguage(latest);
     return;
    }
   }catch(e){}
   const suggested=countryLanguages[country]||localeLanguage();
-  if(paths[suggested]&&suggested!==current){
+  if(supportedLanguages.includes(suggested)&&suggested!==current){
    let alreadyRedirected=false;
    try{alreadyRedirected=sessionStorage.getItem("makadi-language-redirected")==="1"}catch(e){}
    if(!alreadyRedirected){
@@ -123,3 +154,28 @@ document.addEventListener("DOMContentLoaded",()=>{
   }else{revealTargets.forEach(el=>el.classList.add("is-visible"))}
  }
 });
+
+ // Count up project figures only when they enter view; the final values remain crawlable.
+ const counters=[...document.querySelectorAll("[data-counter]")];
+ const finishCounter=el=>{el.textContent=Number(el.dataset.counter).toLocaleString("en-US")};
+ const animateCounter=el=>{
+  if(el.dataset.counted==="true")return;
+  el.dataset.counted="true";
+  const target=Number(el.dataset.counter);
+  if(!Number.isFinite(target)||window.matchMedia("(prefers-reduced-motion: reduce)").matches){finishCounter(el);return}
+  const duration=1350,start=performance.now();
+  const tick=now=>{
+   const progress=Math.min(1,(now-start)/duration),eased=1-Math.pow(1-progress,3);
+   el.textContent=Math.round(target*eased).toLocaleString("en-US");
+   if(progress<1)requestAnimationFrame(tick);else finishCounter(el);
+  };
+  requestAnimationFrame(tick);
+ };
+ if(counters.length){
+  if("IntersectionObserver" in window&&!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+   const counterObserver=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{if(entry.isIntersecting){animateCounter(entry.target);counterObserver.unobserve(entry.target)}});
+   },{threshold:.45});
+   counters.forEach(el=>counterObserver.observe(el));
+  }else counters.forEach(finishCounter);
+ }
