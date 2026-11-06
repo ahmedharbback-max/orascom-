@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded",()=>{
  const select=document.getElementById("siteLanguage");
  const current=document.documentElement.lang||"en";
  const countryLanguages={
-  EG:"ar",SA:"ar",AE:"ar",QA:"ar",KW:"ar",BH:"ar",OM:"ar",JO:"ar",LB:"ar",IQ:"ar",YE:"ar",PS:"ar",SD:"ar",MA:"ar",DZ:"ar",TN:"ar",LY:"ar",
+  EG:"en",SA:"ar",AE:"ar",QA:"ar",KW:"ar",BH:"ar",OM:"ar",JO:"ar",LB:"ar",IQ:"ar",YE:"ar",PS:"ar",SD:"ar",MA:"ar",DZ:"ar",TN:"ar",LY:"ar",
   FR:"fr",MC:"fr",SN:"fr",CI:"fr",CD:"fr",CM:"fr",
   DE:"de",AT:"de",CH:"de",LI:"de",
   IT:"it",SM:"it",VA:"it",
@@ -63,6 +63,25 @@ document.addEventListener("DOMContentLoaded",()=>{
  };
  if(select){
   select.value=current;
+  const picker=document.querySelector(".language-picker");
+  const trigger=picker?.querySelector(".language-current");
+  const menu=picker?.querySelector(".language-menu");
+  if(trigger&&menu){
+   trigger.addEventListener("click",()=>{
+    const open=picker.classList.toggle("is-open");
+    trigger.setAttribute("aria-expanded",String(open));
+   });
+   menu.querySelectorAll("[data-language]").forEach(item=>item.addEventListener("click",()=>{
+    select.value=item.dataset.language;
+    select.dispatchEvent(new Event("change",{bubbles:true}));
+   }));
+   document.addEventListener("click",event=>{
+    if(!picker.contains(event.target)){picker.classList.remove("is-open");trigger.setAttribute("aria-expanded","false")}
+   });
+   document.addEventListener("keydown",event=>{
+    if(event.key==="Escape"){picker.classList.remove("is-open");trigger.setAttribute("aria-expanded","false");trigger.focus()}
+   });
+  }
   select.addEventListener("change",()=>{
    const chosen=select.value;
    try{localStorage.setItem("makadi-language-manual",chosen)}catch(e){}
@@ -123,3 +142,28 @@ document.addEventListener("DOMContentLoaded",()=>{
   }else{revealTargets.forEach(el=>el.classList.add("is-visible"))}
  }
 });
+
+ // Count up project figures only when they enter view; the final values remain crawlable.
+ const counters=[...document.querySelectorAll("[data-counter]")];
+ const finishCounter=el=>{el.textContent=Number(el.dataset.counter).toLocaleString("en-US")};
+ const animateCounter=el=>{
+  if(el.dataset.counted==="true")return;
+  el.dataset.counted="true";
+  const target=Number(el.dataset.counter);
+  if(!Number.isFinite(target)||window.matchMedia("(prefers-reduced-motion: reduce)").matches){finishCounter(el);return}
+  const duration=1350,start=performance.now();
+  const tick=now=>{
+   const progress=Math.min(1,(now-start)/duration),eased=1-Math.pow(1-progress,3);
+   el.textContent=Math.round(target*eased).toLocaleString("en-US");
+   if(progress<1)requestAnimationFrame(tick);else finishCounter(el);
+  };
+  requestAnimationFrame(tick);
+ };
+ if(counters.length){
+  if("IntersectionObserver" in window&&!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+   const counterObserver=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{if(entry.isIntersecting){animateCounter(entry.target);counterObserver.unobserve(entry.target)}});
+   },{threshold:.45});
+   counters.forEach(el=>counterObserver.observe(el));
+  }else counters.forEach(finishCounter);
+ }
