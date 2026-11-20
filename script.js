@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded",()=>{
  const menu=document.getElementById("menuToggle"),nav=document.getElementById("navLinks");
  if(menu&&nav){
+  nav.classList.remove("open");
+  menu.setAttribute("aria-expanded","false");
+  menu.setAttribute("aria-label","Open menu");
   menu.addEventListener("click",()=>{
    const open=nav.classList.toggle("open");
    menu.setAttribute("aria-expanded",String(open));
